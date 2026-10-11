@@ -6,3 +6,12 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- :Tutor puts a sign-less extmark on each exercise line at the same priority as its ✗/✓ sign,
+-- and Snacks' statuscolumn picks the empty one. The built-in sign column shows both.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "tutor",
+  callback = function()
+    vim.opt_local.statuscolumn = ""
+  end,
+})
