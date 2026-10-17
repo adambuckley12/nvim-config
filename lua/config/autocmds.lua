@@ -15,3 +15,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.statuscolumn = ""
   end,
 })
+
+-- Auto-save real files when leaving insert mode or switching away from Neovim
+vim.api.nvim_create_autocmd({ "InsertLeave", "FocusLost" }, {
+  desc = "Auto-save",
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == "" and vim.bo.modifiable and not vim.bo.readonly and vim.fn.expand("%") ~= "" then
+      vim.cmd("silent! write")
+    end
+  end,
+})
