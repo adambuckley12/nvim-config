@@ -3,7 +3,24 @@ return {
   -- OCaml: use the opam-installed ocamllsp (matches the compiler version) instead of Mason's.
   {
     "neovim/nvim-lspconfig",
-    opts = { servers = { ocamllsp = { mason = false } } },
+    opts = {
+      codelens = { enabled = true }, -- LazyVim leaves code lens off by default
+      inlay_hints = { enabled = true }, -- toggle with <leader>uh
+      servers = {
+        ocamllsp = {
+          mason = false,
+          settings = {
+            codelens = { enable = true }, -- `val f : ...` above top-level lets
+            extendedHover = { enable = true }, -- press K again for more detail
+            inlayHints = {
+              hintLetBindings = true,
+              hintPatternVariables = true,
+              hintFunctionParams = true,
+            },
+          },
+        },
+      },
+    },
   },
   -- Lean 4: LSP, infoview, unicode input (\alpha → α). Toolchain via elan.
   {
