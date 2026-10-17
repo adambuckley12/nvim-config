@@ -18,6 +18,12 @@ return {
         -- A muted green, a shade dimmer than comments, so it reads as a guide rather than code.
         local scope_green = vim.o.background == "light" and "#7fb67a" or "#4f7a48"
         hl.SnacksIndentScope = { fg = scope_green, nocombine = true }
+
+        -- Inlay hints and the type line above functions: nudged 15% towards the main
+        -- text colour so they're a touch easier to read (works in dark and light mode).
+        local util = require("tokyonight.util")
+        hl.LspInlayHint = { bg = util.blend_bg(c.blue7, 0.1), fg = util.blend(c.fg, 0.2, c.dark3) }
+        hl.LspCodeLens = { fg = util.blend(c.fg, 0.2,  c.comment) }
       end,
     },
   },

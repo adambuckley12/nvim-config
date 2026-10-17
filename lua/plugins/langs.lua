@@ -5,7 +5,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       codelens = { enabled = true }, -- LazyVim leaves code lens off by default
-      inlay_hints = { enabled = true }, -- toggle with <leader>uh
+      inlay_hints = { enabled = false }, -- off by default; toggle on with <leader>uh
       servers = {
         ocamllsp = {
           mason = false,
