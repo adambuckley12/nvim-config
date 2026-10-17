@@ -1,0 +1,67 @@
+[general]
+live_config_reload = true
+
+[window]
+padding = { x = 14, y = 12 }
+dynamic_padding = true          # spread leftover pixels evenly instead of dumping them bottom-right
+decorations = "Buttonless"      # no title bar, keeps rounded corners
+option_as_alt = "Both"          # Option sends Alt, so Alt keybinds work in Neovim
+startup_mode = "Windowed"
+dimensions = { columns = 120, lines = 34 }
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 14.0
+offset = { x = 0, y = 2 }       # a little extra line spacing
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+
+# Tokyo Night: matches LazyVim's default colorscheme
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.selection]
+background = "#283457"
+text = "CellForeground"
+
+[colors.normal]
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+
+[colors.bright]
+black = "#414868"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#c0caf5"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
+# Ctrl-/ sends the Ctrl-_ code, which LazyVim uses to toggle its terminal (stops the macOS beep)
+[[keyboard.bindings]]
+key = "Slash"
+mods = "Control"
+chars = "\u001F"
