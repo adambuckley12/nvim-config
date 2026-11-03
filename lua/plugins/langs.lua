@@ -1,5 +1,14 @@
 -- Languages without a LazyVim extra
 return {
+  -- OCaml: format by running ocamlformat directly, not through the language server.
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        ocaml = { "ocamlformat" },
+      },
+    },
+  },
   -- OCaml: use the opam-installed ocamllsp (matches the compiler version) instead of Mason's.
   {
     "neovim/nvim-lspconfig",

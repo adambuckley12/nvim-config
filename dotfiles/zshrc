@@ -116,3 +116,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # Option-Left / Option-Right jump by word (Alacritty sends these with option_as_alt)
 bindkey '^[[1;3D' backward-word
 bindkey '^[[1;3C' forward-word
+
+# mise (runtime version manager: java, etc.)
+eval "$(/opt/homebrew/bin/mise activate zsh)"
